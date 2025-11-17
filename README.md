@@ -8,7 +8,7 @@ Build a simple task management system that automatically adjusts task priorities
 ## Core Requirements (Must Complete)
 
 ### 1. API Integrations (2 Required)
-1. **Weather API** (Required)
+1. [**Weather API**](https://openweathermap.org/api/one-call-3) (Required):
    - Use OpenWeatherMap API (free tier)
    - Fetch current weather and 5-day forecast
    - Store relevant data (temperature, conditions, wind speed)
