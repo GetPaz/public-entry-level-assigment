@@ -87,43 +87,6 @@ Create a REST API with these endpoints:
    - `GET /health` - API health check
    - `GET /state-machine` - Return state machine configuration
 
-### Code Structure Requirements
-```
-/project_root
-  /app
-    __init__.py
-    main.py           # FastAPI/Flask app initialization
-    /controllers      # Route handlers
-      __init__.py
-      tasks.py
-      weather.py
-    /services         # Business logic
-      __init__.py
-      task_service.py
-      weather_service.py
-      state_machine.py
-    /integrations     # External API clients
-      __init__.py
-      weather_api.py
-      secondary_api.py
-    /models          # Data models/schemas
-      __init__.py
-      task.py
-      weather.py
-    /utils           # Helper functions
-      __init__.py
-      cache.py
-      validators.py
-  /tests
-    __init__.py
-    test_weather_impact.py
-    test_state_machine.py
-  requirements.txt    # Python dependencies
-  .env.example
-  README.md
-  run.py             # Entry point
-```
-
 ### Python-Specific Requirements
 - Use type hints for function parameters and returns
 - Implement proper Python classes for models
@@ -164,7 +127,7 @@ Provide a Python script (`seed_data.py`) to populate sample tasks:
 
 ## Sample Code Structure (To Get You Started)
 
-### Example Model (models/task.py)
+### Example Model 
 ```python
 from enum import Enum
 from datetime import datetime
@@ -197,7 +160,7 @@ class Task:
     priority: int
 ```
 
-### Example Service Method (services/weather_service.py)
+### Example Service Method
 ```python
 from typing import Dict, Any
 import requests
@@ -206,7 +169,7 @@ from datetime import datetime, timedelta
 class WeatherService:
     def __init__(self, api_key: str):
         self.api_key = api_key
-        self.base_url = "https://api.openweathermap.org/data/2.5"
+        self.base_url = "https://api.openweathermap.org/data/3.0"
         self.cache = {}
         self.cache_duration = timedelta(minutes=10)
     
@@ -226,6 +189,7 @@ class WeatherService:
 - State machine handles transitions properly
 - Weather API integration functional
 - Clean, readable code with proper error handling
+- Clean code/folder structure
 
 ### Good to Have (20%)
 - Modular code structure
